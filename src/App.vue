@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import {contacts} from '@/services/Contacts'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
