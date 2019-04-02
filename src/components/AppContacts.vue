@@ -7,35 +7,22 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from 'vuex'
 import {contactsService} from '@/services/Contacts'
 
 export default {
-    data(){
-        return{
-            contacts : []
-        }
+    created(){
+        /////OBRISALI SMO SVE ZBOG VUEXA
+        this.fetchContacts()
     },
 
-    // crated(){
-    //     contacts.getAll()
-    //     .then(response => {
-            // console.log(response)
-            // this.contacts = response.data;
-    //     }).catch(error=>{
-
-    //     })
-    // },
-
-    async created(){
-        try{
-            const response = await contactsService.getAll()
-            console.log(response)
-            this.contacts = response.data;
-        } catch (error) {
-
-        }
+    methods:{
+        ...mapActions(['fetchContacts'])
     },
 
+    computed:{
+        ...mapGetters(['contacts'])
+    }
 }
 </script>
 

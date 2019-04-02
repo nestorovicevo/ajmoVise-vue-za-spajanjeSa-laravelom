@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {contactsService} from '@/services/Contacts'
+import {mapActions} from 'vuex'
 
 export default {
     data(){
@@ -24,8 +24,10 @@ export default {
     },
 
     methods :{
+        ...mapActions(['createContact']),
+
         handleSubmit(){
-            contactsService.create(this.contact)
+            this.createContact(this.contact)
         }
     }
 }
