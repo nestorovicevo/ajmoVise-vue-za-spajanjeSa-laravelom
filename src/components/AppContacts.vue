@@ -20,7 +20,7 @@ export default {
     //     contacts.getAll()
     //     .then(response => {
             // console.log(response)
-
+            // this.contacts = response.data;
     //     }).catch(error=>{
 
     //     })
@@ -34,7 +34,8 @@ export default {
         } catch (error) {
 
         }
-    }
+    },
+
 }
 </script>
 

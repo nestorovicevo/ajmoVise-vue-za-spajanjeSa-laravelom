@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <AddContact/>
     <AppContacts/>
   </div>
 </template>
 
 <script>
+import AddContact from '@/components/AddContact'
 import AppContacts from '@/components/AppContacts'
 
 export default {
   name: 'app',
   components: {
+    AddContact,
     AppContacts
   }
 }
