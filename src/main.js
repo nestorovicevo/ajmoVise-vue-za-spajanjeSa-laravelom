@@ -11,12 +11,13 @@ Vue.use(Vuex)
 Vue.use(VueRouter)
 
 const routes = [
+  {path: '/', redirect: '/contacts'},
   {path: '/login', component: AppLogin},
-  {path: '/', redirect: 'contacts'},
   {path: '/contacts', component: AppContacts}
 ]
 
-const router = new VueRouter({
+const router = new VueRouter({ 
+  mode: 'history',
   routes
 })
 

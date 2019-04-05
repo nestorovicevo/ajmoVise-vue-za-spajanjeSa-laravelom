@@ -8,6 +8,11 @@ class Auth {
             credencials
         )
         console.log(response)
+        //Postaviti token u local storage
+        const token= response.data.access_token
+        localStorage.setItem('token', token)
+        //Postaviti authorization header
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
       }catch(error){
         console.log(error)
       }
