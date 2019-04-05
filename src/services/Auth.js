@@ -28,7 +28,13 @@ class Auth {
     }
 
     isAuthenticated(){
+        //proverava da li je ulogovan i da li sme na odredjene stranice
+        return !!localStorage.getItem('token') ///ako postoji token vratice token a a ko ne vratice null, zato pravimo !! da bi bio boolean
+    }
 
+    logout(){
+        localStorage.removeItem('token')
+        axios.post('http://localhost:8000/api/auth/logout')
     }
 }
 

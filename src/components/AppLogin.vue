@@ -29,7 +29,13 @@ export default {
             })
             this.$router.push('/contacts')//ovo je da bi nas kad se ulogujemo prebacilo na contacts
         }
-    }
+    },
+
+    // beforeRouteEnter(to, from, next){
+    //     next(vm=>{
+    //         vm.email = 'nekimail@gmail.com'
+    //     })
+    // }
 }
 </script>
 
