@@ -21,6 +21,8 @@ const router = new VueRouter({
 })
 
 import {contactsService} from '@/services/Contacts'
+import {authService} from '@/services/Auth'
+
 
 const store = new Vuex.Store({
   state: {
@@ -30,6 +32,9 @@ const store = new Vuex.Store({
   actions: {
     ///ova akcija ce pozvati metodu iz servisa
     //////i komitovati mutaciju odnosno pozvati je 
+    async login(context, credencials){
+      await authService.login(credencials)
+    },
     async fetchContacts(context){
       const response = await contactsService.getAll()
       context.commit('SET_CONTACTS', response.data)
