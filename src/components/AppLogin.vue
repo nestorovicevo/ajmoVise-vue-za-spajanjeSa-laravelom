@@ -27,6 +27,7 @@ export default {
                 email: this.email,
                 password: this.password
             })
+            this.$router.push('/contacts')//ovo je da bi nas kad se ulogujemo prebacilo na contacts
         }
     }
 }
