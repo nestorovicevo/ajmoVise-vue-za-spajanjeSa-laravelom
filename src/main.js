@@ -1,8 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App.vue'
+import VueRouter from 'vue-router'
+
+import AppLogin from '@/components/AppLogin'
+import AppContacts from '@/components/AppContacts'
+
 
 Vue.use(Vuex)
+Vue.use(VueRouter)
+
+const routes = [
+  {path: 'login', component: AppLogin},
+  {path: '/', redirect: 'contacts'},
+  {path: 'contacts', component: AppContacts}
+]
+
+const router = new VueRouter({
+  routes
+})
 
 import {contactsService} from '@/services/Contacts'
 
@@ -46,5 +62,6 @@ Vue.config.productionTip = false
 
 new Vue({
   store,
+  router,
   render: h => h(App),
 }).$mount('#app')
