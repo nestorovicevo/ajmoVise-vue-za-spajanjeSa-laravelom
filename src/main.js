@@ -11,9 +11,9 @@ Vue.use(Vuex)
 Vue.use(VueRouter)
 
 const routes = [
-  {path: 'login', component: AppLogin},
+  {path: '/login', component: AppLogin},
   {path: '/', redirect: 'contacts'},
-  {path: 'contacts', component: AppContacts}
+  {path: '/contacts', component: AppContacts}
 ]
 
 const router = new VueRouter({
